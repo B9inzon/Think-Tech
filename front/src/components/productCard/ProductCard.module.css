@@ -1,0 +1,27 @@
+.productCardContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.productCard{
+    box-shadow: 0 0 5px gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 3vh;
+}
+
+.description{
+    text-align:center;
+    width: 80%;
+}
+
+/* span{
+    border: 1px solid red;
+} */
