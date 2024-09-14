@@ -1,27 +1,23 @@
 import { IProduct } from "@/Interfaces/IProduct";
-import Image from "next/image";
 import styles from "@/components/productCard/ProductCard.module.css";
 
 const ProductCard: React.FC<IProduct> = ({
-  id,
+  // id,
   name,
   description,
   price,
-  stock,
+  // stock,
   image,
-  categoryId,
+  // categoryId,
 }) => {
   return (
     <div  className={styles.productCardContainer}>
       <div className={styles.productCard}>
-        {/* <span>ID: {id}</span> */}
-        <img src={image} alt={name} width={100} height={200} />
-        <div>
-        <span>Nombre: {name}</span>
-        <p className={styles.description}>Descripción: {description}</p>
-        <span>Precio: {price}</span>
-        {/* <span>Stock: {stock}</span> */}
-        {/* <span>Category: {categoryId}</span> */}
+        <img className={styles.productImg} src={image} alt={name} width={100} height={200} />
+        <div className={styles.dataContainer}>
+        <p className={styles.productName}>{name}</p>
+        <p className={styles.description}>{description}</p>
+        <span className={styles.boldContainer}>Precio: <span className={styles.bold}>{price}</span></span>
         </div>
       </div>
     </div>

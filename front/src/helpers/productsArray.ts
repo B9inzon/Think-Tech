@@ -1,4 +1,5 @@
-import { IProduct } from "@/components/productCard/types";
+import { IProduct } from "@/Interfaces/IProduct";
+
 
 export const productsArray: IProduct[] = [
   {
