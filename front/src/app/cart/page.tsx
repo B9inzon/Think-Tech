@@ -1,8 +1,9 @@
+import CartView from '@/views/CartView/CartView'
 import React from 'react'
 
 const Cart = () => {
-  return (
-    <div>Cart</div>
+  return (    
+    <CartView/>
   )
 }
 

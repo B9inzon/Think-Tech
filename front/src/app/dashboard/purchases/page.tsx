@@ -1,8 +1,9 @@
+import PurchasesView from '@/views/PurchasesView/PurchasesView'
 import React from 'react'
 
 const Purchases = () => {
   return (
-    <div>Purchases</div>
+    <PurchasesView/>
   )
 }
 
