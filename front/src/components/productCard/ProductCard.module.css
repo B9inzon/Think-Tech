@@ -48,6 +48,7 @@
     flex-direction: column;
     align-items:center;
     justify-content: center;
+    /* border-left: 2px solid gray; */
     /* border: 1px solid red; */
 }
 
@@ -58,7 +59,7 @@
 
 .boldContainer{
     font-size: 1vw;
-
+    
 }
 .productImg{
     margin-right: 1vw;
