@@ -2,16 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { RegisterErrorState, RegisterFormState } from "@/Interfaces/IRegister";
-import validateRegister from "@/helpers/validateRegister"
+import validateRegister from "@/helpers/validateRegister";
 
 const RegisterForm: React.FC = () => {
-    
-    const inicialState: RegisterFormState = {
-      email: "",
-      address: "",
-      phone: "",
-      password: "",
-    };
+  const inicialState: RegisterFormState = {
+    email: "",
+    address: "",
+    phone: "",
+    password: "",
+  };
 
   const [form, setForm] = useState<RegisterFormState>(inicialState);
   const [errors, setErrors] = useState<RegisterErrorState>(inicialState);
@@ -28,9 +27,8 @@ const RegisterForm: React.FC = () => {
       email: form.email,
       password: form.password,
     };
-    alert("Ha ingresado correctamente")
-    setForm(inicialState
-    )   
+    alert("Ha ingresado correctamente");
+    setForm(inicialState);
   };
 
   const formInputs = [
@@ -42,12 +40,19 @@ const RegisterForm: React.FC = () => {
 
   useEffect(() => {}, [form]);
 
-
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form
+      onSubmit={handleOnSubmit}
+      className="w-1/4 p-6 mx-auto space-y-6 rounded-lg shadow-lg bg-[#e1e0e3]"
+    >
       {formInputs.map(({ label, name, type }) => (
-        <div key={name}>
-          <label htmlFor={name}>{label}</label>
+        <div key={name} className="flex flex-col">
+          <label
+            htmlFor={name}
+            className="mb-2 font-medium text-gray-700 text-md"
+          >
+            {label}
+          </label>
           <input
             id={name}
             name={name}
@@ -55,9 +60,10 @@ const RegisterForm: React.FC = () => {
             value={form[name as keyof RegisterFormState]}
             placeholder={`Ingresar ${label}`}
             onChange={handleInputChange}
+            className="p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors[name as keyof RegisterErrorState] && (
-            <span style={{ color: "coral" }}>
+            <span className="mt-1 text-red-500 text-md">
               {errors[name as keyof RegisterErrorState]}
             </span>
           )}
@@ -65,7 +71,10 @@ const RegisterForm: React.FC = () => {
       ))}
       <button
         type="submit"
-        disabled={Object.keys(form).some((e) => !form[e as keyof RegisterFormState])}
+        disabled={Object.keys(form).some(
+          (e) => !form[e as keyof RegisterFormState]
+        )}
+        className="w-full px-5 py-3 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-400"
       >
         Enviar
       </button>

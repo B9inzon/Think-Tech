@@ -1,4 +1,3 @@
-const addressRegex = /^[A-Za-z0-9\s,'.-/#]{2,50}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const hasLetter = /[a-zA-Z]/;
 const hasDigit = /\d/;
@@ -25,15 +24,13 @@ export default function validateRegister({
   }
 
   if (!address) {
-    errors.address = "El campo 'Nombre' es obligatorio.";
+    errors.address = "El campo 'Dirección' es obligatorio.";
   } else {
-    if (!addressRegex.test(address)) {
-      errors.address = "Debe tener una longitud máxima de 50 carácteres.";
-    }
+   
   }
 
   if (!phone) {
-    errors.phone = "El campo 'Email' es obligatorio.";
+    errors.phone = "El campo 'Telefono' es obligatorio.";
   } else {
     if (!hasMinLengthPhone.test(phone)) {
       errors.phone = "Debe tener una longitud mínima de 10 caracteres.";
