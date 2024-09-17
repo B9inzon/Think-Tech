@@ -1,26 +1,17 @@
 import { IProduct } from "@/Interfaces/IProduct";
-import styles from "@/components/productCard/ProductCard.module.css";
+// import styles from "@/components/productCard/ProductCard.module.css";
 
-const ProductCard: React.FC<IProduct> = ({
-  // id,
-  name,
-  description,
-  price,
-  // stock,
-  image,
-  // categoryId,
-}) => {
+const ProductCard: React.FC<IProduct> = ({ name, price, image }) => {
   return (
-    <div  className={styles.productCardContainer}>
-      <div className={styles.productCard}>
-        <img className={styles.productImg} src={image} alt={name} width={100} height={200} />
-        <div className={styles.dataContainer}>
-        <p className={styles.productName}>{name}</p>
-        <p className={styles.description}>{description}</p>
-        <span className={styles.boldContainer}>Precio: <span className={styles.bold}>{price}</span></span>
+    <div className="w-[450px] h-[380px] flex flex-row items-center justify-center gap-4 m-8 p-4 border rounded-xl">
+        <img className="max-w-[250px] w-full h-auto" src={image} alt={name} />
+        <div className="flex flex-col items-center justify-center">
+          <p className="font-semibold text-lg">{name}</p>
+          <span className="">
+            $ <span>{price}</span>
+          </span>
         </div>
       </div>
-    </div>
   );
 };
 

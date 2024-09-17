@@ -46,4 +46,26 @@ export const productsArray: IProduct[] = [
     categoryId: 4,
     stock: 10,
   },
+  {
+    id: 5,
+    name: "HomePod mini",
+    price: 99,
+    description:
+      "Elevate your home audio experience with the HomePod mini: immersive sound, intelligent assistant, and smart home hub make the HomePod mini the perfect addition to your home. Enjoy a world of music, news, and more with the HomePod mini.",
+    image:
+      "https://http2.mlstatic.com/D_NQ_NP_800774-MLA45740145234_042021-O.webp",
+    categoryId: 6,
+    stock: 10,
+  },
+  {
+    id:6,
+    name: "AirPods Pro 2",
+    price: 99,
+    description:
+      "Elevate your home audio experience with the HomePod mini: immersive sound, intelligent assistant, and smart home hub make the HomePod mini the perfect addition to your home. Enjoy a world of music, news, and more with the HomePod mini.",
+    image:
+      "https://www.apple.com/v/airpods-max/g/images/overview/contrast/airpods_pro_white__e7dtczxw2lkm_large.png",
+    categoryId: 6,
+    stock: 10,
+  },
 ];

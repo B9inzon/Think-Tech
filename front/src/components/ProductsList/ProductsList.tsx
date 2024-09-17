@@ -8,7 +8,9 @@ const ProductsList = () => {
 
   return (
     <div className={styles.myProductsContainer}>
-      <h1>Best Offers</h1>
+      <div className="w-full p-2 mt-5 flex items-center text-[#363537] justify-center">
+      <h1 className="text-3xl">Principales productos</h1>
+      </div>
       <div className={styles.myProducts}>
         <hr />
         {products &&
