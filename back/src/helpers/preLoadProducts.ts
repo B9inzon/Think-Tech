@@ -13,12 +13,12 @@ interface IProduct {
 
 const productsToPreLoad: IProduct[] = [
   {
-    name: "iPhone 11",
+    name: "iPhone 16 pro",
     price: 699,
     description:
       "Experience power and elegance with the iPhone 11: capture stunning moments with its dual-camera system, enjoy exceptional performance, and immerse yourself in a brilliant Liquid Retina display. Discover a world of possibilities in the palm of your hand!",
     image:
-      "https://http2.mlstatic.com/D_NQ_NP_809326-MLA46115014340_052021-O.webp",
+      "https://www.apple.com/v/iphone/home/bw/images/overview/select/iphone_16pro__erw9alves2qa_xlarge.png",
     categoryId: 1,
     stock: 10,
   },
@@ -53,12 +53,12 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
-    name: "AirPods Pro",
+    name: "AirPods Pro 2",
     price: 249,
     description:
       "Immerse yourself in sound with the AirPods Pro: active noise cancellation, transparency mode, and customizable fit make the AirPods Pro the perfect companion for music, calls, and everything in between. Elevate your audio experience with the AirPods Pro.",
     image:
-      "https://http2.mlstatic.com/D_NQ_NP_779146-MLA53778959612_022023-O.webp",
+      "https://www.apple.com/v/airpods-max/g/images/overview/contrast/airpods_pro_white__e7dtczxw2lkm_large.png",
     categoryId: 5,
     stock: 10,
   },
