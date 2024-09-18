@@ -7,7 +7,3 @@ export interface IProduct{
     image: string;
     categoryId?: number;
 }
-
-
-
-

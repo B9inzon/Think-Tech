@@ -41,3 +41,35 @@ export default ProductsList;
 
 
 
+// import axios from "axios";
+// import { IProduct } from "@/interfaces/IProduct"; // Asegúrate de importar la interfaz desde la ubicación correcta
+
+// const productDetailFetch = async (id: number): Promise<IProduct> => {
+//   try {
+//     const { data } = await axios.get<IProduct>(`https://fakestoreapi.com/products/${id}`);
+    
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching product details", error);
+//     throw error;
+//   }
+// };
+
+// const Product = async ({ params }: { params: { id: number } }) => {
+
+//   const { id, name, price, description, image } = await productDetailFetch(params.id);
+
+//   return (
+//     <>
+//       <ProductDetail
+//         id={id}
+//         title={name} // Cambié title por name, ya que la interfaz usa 'name'
+//         price={price}
+//         description={description}
+//         image={image}
+//       />
+//     </>
+//   );
+// };
+
+// export default Product;
