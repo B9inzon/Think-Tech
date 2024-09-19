@@ -1,43 +1,39 @@
+import { IProduct } from "@/Interfaces/IProduct";
+import React from "react";
 
-
-
-import axios from 'axios';
-import ProductDetail from '@/components/ProductDetail/ProductDetail';
-import { IProduct } from '@/Interfaces/IProduct';
-import React from 'react'
-
-
-
-
-const  ProductDetailAxios = async (id:number): Promise<IProduct> => {
-  try {
-    const { data } = await axios<IProduct>(`http://localhost:3003/products/${id}`)
-
-    return data;
-  } catch (error) {
-    throw new Error('No se pudo cargar el producto');    
-  }
-}
-
-const Product = async ({ params }: { params: { id: number } }) => {
-
-  try {
-    const product = await ProductDetailAxios(params.id);
-    return (
-      <div>
-        <ProductDetail
-          id={product.id}
-          name={product.name}
-          price={product.price}
-          description={product.description}
-          image={product.image}
-        />
+const ProductDetail: React.FC<IProduct> = ({
+  image,
+  name,
+  description,
+  price,
+}) => {
+  return (
+    <div className="flex flex-col items-center w-screen h-screen ">
+      <h1 className="my-8 text-3xl font-bold text-[#363537]">
+        Detalle del producto
+      </h1>
+      <div className=" flex flex-row h-screen w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
+        <div className="flex flex-row h-[80%]  w-[80%] p-4 items-center justify-around rounded-xl border">
+          <div className="flex items-center justify-center w-[50%] h-full">
+            <img className="w-full  h-[40% rounded-xl" src={image} alt={name} />
+          </div>
+          <div className="flex flex-col items-center w-[80%] h-full p-2">
+            <div className="flex flex-col h-[60%] w-[70%] items-start justify-evenly p-2 ">
+              <h2 className="text-3xl font-semibold ">{name}</h2>
+              <p className="text-md">{description}</p>
+            </div>
+            <div className="flex items-center justify-center w-full p-2 h-[20%]">
+              <h3 className="text-2xl font-bold">Precio: ${price}</h3>
+            </div>
+            <div className="flex items-center justify-center w-full p-2  h-[20%]">
+              <button className=" rounded-xl h-[45%] w-[70%] bg-yellow-400 font-bold text-xl">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
       </div>
-    );
-  }
-  catch (error) {
-    return <p>Error al cargar los detalles del producto.</p>;
-}
-}
+    </div>
+  );
+};
 
-export default Product
+
+export default ProductDetail;

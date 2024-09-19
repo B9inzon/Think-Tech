@@ -1,12 +1,16 @@
+
+
 "use client";
 
 import React, { useEffect, useState } from "react";
 import { RegisterErrorState, RegisterFormState } from "@/Interfaces/IRegister";
 import validateRegister from "@/helpers/validateRegister";
+import axios from "axios";
 
 const RegisterForm: React.FC = () => {
   const inicialState: RegisterFormState = {
     email: "",
+    name:"",
     address: "",
     phone: "",
     password: "",
@@ -26,13 +30,30 @@ const RegisterForm: React.FC = () => {
     const formData = {
       email: form.email,
       password: form.password,
+      name: form.name,
+      address: form.address,
+      phone: form.phone,
     };
-    alert("Ha ingresado correctamente");
-    setForm(inicialState);
+    
+    axios
+      .post("http://localhost:3003/users/register", formData)
+    .then(({ data }) => {
+        console.log(formData);
+        setForm(inicialState);
+        // navigate("/login");
+        alert("Se ha registrado correctamente");
+        setForm(inicialState);
+      })
+      .catch((error) => {
+        alert(
+          `Se ha producido un error en la creación del usuario. ${error.response.data.message}`
+        );
+      });
   };
 
   const formInputs = [
     { label: "Correo", name: "email", type: "text" },
+    { label: "Nombre", name: "name", type: "text" },
     { label: "Dirección", name: "address", type: "text" },
     { label: "Telefono", name: "phone", type: "text" },
     { label: "Contraseña", name: "password", type: "password" },

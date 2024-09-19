@@ -1,9 +1,9 @@
-export interface LoginFormState {
+export interface ILoginFormState {
     email: string;
     password: string;
   }
 
-export interface LoginErrorState {
+export interface ILoginErrorState {
     email?: string;
   password?: string;
 }

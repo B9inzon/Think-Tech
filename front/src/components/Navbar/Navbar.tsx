@@ -6,11 +6,13 @@ const Navbar = () => {
     <div className="w-screen text-lg flex items-center justify-center bg-[#b6b3b9]">
       <nav className="flex flex-row items-center justify-between w-9/12 h-24">
         <div>
+          <Link href="/">
           <img
             className="rounded-full max-h-16"
             src="https://static.vecteezy.com/system/resources/thumbnails/006/298/276/small/gear-smart-eps-icon-digital-tech-business-logo-free-vector.jpg"
             alt="logo"
-          />
+            />
+            </Link>
         </div>
         <div className="w-3/5 text-[#363537] font-black flex flex-row items-center justify-between content-between gap-[6vw]">
           <Link

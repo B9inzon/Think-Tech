@@ -3,9 +3,9 @@ import React from "react";
 const CartView = () => {
   return (
     <div className="flex flex-col items-center w-screen h-screen ">
-      <h1>Mi carrito</h1>
-      <div className=" flex flex-row h-screen border w-[80%] bg-[#b6b3b9] p-4 justify-center rounded-xl gap-8">
-        <div className="flex flex-row h-1/4 bg-[#dad9dc] w-[50%] p-4 items-center justify-around border rounded-xl">
+      <h1 className="my-8 text-3xl font-bold text-[#363537]">Mi carrito</h1>
+      <div className=" flex flex-row h-screen w-[80%] bg-[#b6b3b9] p-4 justify-center rounded-t-xl gap-8">
+        <div className="flex flex-row h-1/4 bg-[#dad9dc] w-[50%] p-4 items-center justify-around rounded-xl">
           <div className="flex items-start justify-center w-[20%] h-full">
             <img
               className="max-h-[220px] max-w-20"
@@ -19,8 +19,7 @@ const CartView = () => {
               <p className="text-sm">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Maiores totam cum eius et exercitationem sint asperiores quo,
-                officia, nemo eos consectetur autem harum laborum provident
-                quasi nobis earum temporibus rerum!
+                officia, nemo eos consectetur autem harum laborum provident!
               </p>
             </div>
             <div className="flex items-center justify-end w-full h-full p-2">

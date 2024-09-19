@@ -1,3 +1,5 @@
+
+
 export default function validateLogin ({email, password}) {
     const errors = {};
     if(!email) errors.email = "Ingresar email";
