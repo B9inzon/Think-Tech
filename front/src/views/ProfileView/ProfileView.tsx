@@ -1,8 +1,22 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProfileView = () => {
-  
-  
+  const router = useRouter();
+
+  const handleOnClick = () => {
+
+    if(
+      window.confirm(
+        `¿Desea cerrar sesión?`
+      )
+    ){
+    localStorage.removeItem("userSession");
+    alert("Ha cerrado sesión correctamente")
+    router.push("/");
+  }
+  };
 
   return (
     <div className=" w-screen h-full flex flex-col justify-start items-center p-2  text-[#363537]">
@@ -25,7 +39,7 @@ const ProfileView = () => {
             </p>
           </div>
         </div>
-        <button className="h-8 border w-60 rounded-xl hover:bg-red-100 hover: transition duration-500 ease-in-out">
+        <button className="h-8 border w-60 rounded-xl hover:bg-red-100 hover: transition duration-500 ease-in-out" onClick={handleOnClick}>
           Cerrar sesión
         </button>
       </div>

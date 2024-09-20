@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { IRegisterErrorState, IRegisterFormState } from "@/Interfaces/IRegister";
 import validateRegister from "@/helpers/validateRegister";
-import { registerUser } from "@/helpers/Register.helper";
 import { useRouter } from "next/navigation";
+import { registerUser } from "@/helpers/Register.helper";
 
 const RegisterForm: React.FC = () => {
   const router = useRouter();

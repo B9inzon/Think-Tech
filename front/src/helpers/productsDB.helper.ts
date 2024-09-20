@@ -9,8 +9,12 @@ export async function getProductsFromDb(): Promise<IProduct[]> {
     });
     const products: IProduct[] = await res.json();
     return products;
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    } else {
+      throw new Error("Se produjo un error desconocido");
+    }
   }
 }
 
@@ -21,7 +25,11 @@ export async function getProductById(id: string): Promise<IProduct> {
     if (!foundProduct) throw new Error ('Producto no encontrado');
     return  foundProduct;
 
-  } catch (error: any) {
-    throw new Error(error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    } else {
+      throw new Error("Se produjo un error desconocido");
+    }
   }
 }
