@@ -1,13 +1,26 @@
+"use client";
 
+import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/productCard/ProductCard";
-import React from "react";
 import styles from "@/components/ProductsList/ProductsList.module.css";
 import Link from "next/link";
 import { getProductsFromDb } from "@/helpers/productsDB.helper";
+import { IProduct } from "@/Interfaces/IProduct";
 
-const ProductsList = async () => {
-  3
-  const products = await getProductsFromDb();
+const ProductsList = () => {
+  const [products, setProducts] = useState<IProduct[]>([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const fetchedProducts = await getProductsFromDb();
+        setProducts(fetchedProducts);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+    fetchProducts();
+  }, []);
   return (
     <div className={styles.myProductsContainer}>
       <div className="w-full p-2 mt-5 flex items-center text-[#363537] justify-center">

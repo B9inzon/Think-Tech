@@ -1,4 +1,4 @@
-export interface RegisterFormState {
+export interface IRegisterFormState {
     email: string,
     name: string
     password: string,
@@ -6,7 +6,7 @@ export interface RegisterFormState {
     phone: string
   }
 
-export interface RegisterErrorState{
+export interface IRegisterErrorState{
     email?: string,
     name?: string,
     password?: string,

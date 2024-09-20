@@ -3,8 +3,13 @@
 import React, { useEffect, useState } from "react";
 import validateLogin from "@/helpers/validateLogin";
 import { ILoginErrorState, ILoginFormState } from "@/Interfaces/ILogin";
+import { loginUser } from "@/helpers/Register.helper";
+import { useRouter } from "next/navigation";
 
 const LoginForm: React.FC = () => {
+  
+  const router = useRouter();
+
   const inicialState: ILoginFormState = {
     email: "",
     password: "",
@@ -19,25 +24,16 @@ const LoginForm: React.FC = () => {
     setErrors(validateLogin({ ...form, [name]: value }));
   };
 
-  const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = {
-      email: form.email,
-      password: form.password,
-    };
-    
-    fetch("http://localhost:3003/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type":  "application/json",
-      },
-      body: JSON.stringify({formData})
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((err)=>console.log(err))
-    alert("Ha ingresado correctamente");
-    setForm(inicialState);
+    const response = await loginUser(form);
+    const { token, user } = response;
+    localStorage.setItem("userSession", JSON.stringify({ token, user }));
+
+    alert("¡Ha ingresado correctamente!");
+    router.push("/");
+
+    console.log(response);
   };
 
   const formInputs = [

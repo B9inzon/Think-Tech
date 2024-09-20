@@ -2,21 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import { Nunito, Roboto } from 'next/font/google'
- 
+import { Nunito, Roboto } from "next/font/google";
+
 const nunito = Nunito({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "My E-commerce",
@@ -30,11 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} ${roboto.className} bg-[#fbfbfb] flex flex-col h-screen items-center justify-between`}
+      <body
+        className={`${nunito.className} ${roboto.className} bg-[#fbfbfb] flex flex-col h-screen items-center justify-between`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

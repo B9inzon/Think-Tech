@@ -1,14 +1,15 @@
-
-
-"use client";
+"use client"
 
 import React, { useEffect, useState } from "react";
-import { RegisterErrorState, RegisterFormState } from "@/Interfaces/IRegister";
+import { IRegisterErrorState, IRegisterFormState } from "@/Interfaces/IRegister";
 import validateRegister from "@/helpers/validateRegister";
-import axios from "axios";
+import { registerUser } from "@/helpers/Register.helper";
+import { useRouter } from "next/navigation";
 
 const RegisterForm: React.FC = () => {
-  const inicialState: RegisterFormState = {
+  const router = useRouter();
+
+  const inicialState: IRegisterFormState = {
     email: "",
     name:"",
     address: "",
@@ -16,39 +17,20 @@ const RegisterForm: React.FC = () => {
     password: "",
   };
 
-  const [form, setForm] = useState<RegisterFormState>(inicialState);
-  const [errors, setErrors] = useState<RegisterErrorState>(inicialState);
+  const [form, setForm] = useState<IRegisterFormState>(inicialState);
+  const [errors, setErrors] = useState<IRegisterErrorState>(inicialState);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
-    setErrors(validateRegister({ ...form, [name]: value }));
   };
 
-  const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = {
-      email: form.email,
-      password: form.password,
-      name: form.name,
-      address: form.address,
-      phone: form.phone,
-    };
+    await registerUser(form)
     
-    axios
-      .post("http://localhost:3003/users/register", formData)
-    .then(({ data }) => {
-        console.log(formData);
-        setForm(inicialState);
-        // navigate("/login");
-        alert("Se ha registrado correctamente");
-        setForm(inicialState);
-      })
-      .catch((error) => {
-        alert(
-          `Se ha producido un error en la creación del usuario. ${error.response.data.message}`
-        );
-      });
+    alert("¡Se ha registrado con éxito!")
+    router.push("/login");
   };
 
   const formInputs = [
@@ -59,7 +41,10 @@ const RegisterForm: React.FC = () => {
     { label: "Contraseña", name: "password", type: "password" },
   ];
 
-  useEffect(() => {}, [form]);
+  useEffect(() => {
+    const errors = validateRegister(form)
+    setErrors(errors);
+  }, [form]);
 
   return (
     <form
@@ -78,14 +63,14 @@ const RegisterForm: React.FC = () => {
             id={name}
             name={name}
             type={type}
-            value={form[name as keyof RegisterFormState]}
+            value={form[name as keyof IRegisterFormState]}
             placeholder={`Ingresar ${label}`}
             onChange={handleInputChange}
             className="p-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {errors[name as keyof RegisterErrorState] && (
+          {errors[name as keyof IRegisterErrorState] && (
             <span className="mt-1 text-red-500 text-md">
-              {errors[name as keyof RegisterErrorState]}
+              {errors[name as keyof IRegisterErrorState]}
             </span>
           )}
         </div>
@@ -93,7 +78,7 @@ const RegisterForm: React.FC = () => {
       <button
         type="submit"
         disabled={Object.keys(form).some(
-          (e) => !form[e as keyof RegisterFormState]
+          (e) => !form[e as keyof IRegisterFormState]
         )}
         className="w-full px-5 py-3 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-400"
       >
