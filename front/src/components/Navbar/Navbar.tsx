@@ -38,19 +38,14 @@ const Navbar = () => {
           >
             Home
           </Link>
-
-          {userData?.user.email?(
+          
           <Link
             className="hover:text-[#e9e8ea] hover:scale-[1.2] transition duration-500 ease-in-out"
-            href="/dashboard/purchases"
+            href="/about"
           >
-            Compras
-          </Link>
-
-          ):(
-            null
-          )
-        }
+            Acerca de nosotros
+          </Link>          
+        
 
           {userData?.user.email ? (
             <div className="flex flex-row bg bg-red-200 gap-10">

@@ -16,7 +16,7 @@ const ProductsList = () => {
         const fetchedProducts = await getProductsFromDb();
         setProducts(fetchedProducts);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error al buscar los productos:", error);
       }
     }
     fetchProducts();
