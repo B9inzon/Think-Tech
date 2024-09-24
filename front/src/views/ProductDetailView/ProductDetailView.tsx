@@ -11,6 +11,8 @@ const ProductDetail: React.FC<IProduct> = ({
   name,
   description,
   price,
+  id, 
+  categoryId
 }) => {
   const router =  useRouter();
 
@@ -26,11 +28,30 @@ const ProductDetail: React.FC<IProduct> = ({
 
 
   const handleAddToCart = () => {
+    //? si no existe el token de usuario alerta que debe iniciar sesión para agregar productos al carrito
     if(!userData?.token){
       alert("Debe iniciar sesión para poder agregar productos al carrito.")
-      router.push("/login");
     }else{
-      alert("Producto agregado al carrito")
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+      //? se valida que el producto ya existe en el array cart
+      const productExist = cart.some((product: IProduct) =>{
+        if(product.id === id) return true;
+        return false
+      })
+
+      //? si el producto ya existe en el array se alerta que el producto ya existe en el carrito
+      if(productExist){
+        alert("El producto ya se encuentra en tu carrito.")
+        router.push("/cart")
+        //? si el producto no existe en el array se hace push al array
+      } else {
+        cart.push({
+          image, name, description, price, categoryId, id
+        })
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Producto agregado al carrito con éxito");
+      }
     }
   };
 
