@@ -20,6 +20,7 @@ const PurchasesView = () => {
   }, []);
 
   const fetchData = async () => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     const purchasesResponse = await getPurchases(userData?.token!);
     setPurchases(purchasesResponse);
   };

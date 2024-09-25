@@ -36,6 +36,7 @@ const CartView = () => {
 
   const handleOnClick = async () => {
     const idProduct = cart?.map((product) =>product.id)
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     await createPurchase(idProduct,  userData?.token!)
     alert("Compra realizada con éxito")
     setCart([])
