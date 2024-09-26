@@ -39,18 +39,19 @@ const PurchasesView = () => {
           return (
             <div
               key={purchases.id}
-              className="flex flex-row h-24 bg-[#dad9dc] w-[50%] p-4 mb-5 items-center justify-around rounded-xl shadow-lg"
+              className="flex flex-row h-20 bg-[#f7f7f8] w-[50%] p-2 mb-5 items-center justify-around rounded-xl shadow-lg"
             >
-              <div className="flex flex-col items-center w-[80%] h-full">
-                <div className="flex flex-col h-[70%] items-start justify-start p-2">
-                  <h2 className="font-semibold">
-                    {new Date(purchases.date)?.toDateString()}
-                  </h2>
-                  <h3 className="text-lg font-bold">
-                    Estado: {purchases.status}
+              <div className="flex flex-row h-full w-full items-center justify-evenly ">
+                  <h3 className="text-lg font-medium">
+                    Fecha de la compra: <span className="text-lg font-semibold">{ new Date (purchases.date)?.toDateString()}
+                    </span>
                   </h3>
-                  <p>Items:  {purchases.products.length}</p>
-                </div>
+                  <p className="text-lg font-medium">Items comprados:  {purchases.products.length}</p>
+                  <h3 className="text-lg font-medium">
+                    Estado de la compra: <span className="text-lg font-semibold">
+                      {purchases.status}
+                    </span>
+                  </h3>
               </div>
             </div>
           );

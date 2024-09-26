@@ -31,23 +31,25 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="w-screen h-full flex flex-col justify-start items-center p-2 text-[#363537] content-center mt-8">
-      <div className="w-4/5 h-screen m-6 flex flex-row justify-evenly items-start text-xl p-8  ">
+    <div className="w-screen h-full flex flex-col justify-start items-center p-2 text-[#363537] content-center mt-8 ">
+      <div className="w-4/5 h-screen m-6 flex flex-row justify-evenly items-start text-xl p-8 ">
         {/* Contenedor Izquierdo con el botón y el link */}
-        <div className=" h-[50%] w-[30%] flex flex-col items-center justify-start p-8">
-          <h1 className="text-3xl font-semibold text-[#363537] mb-20 bg-[#e9e8ea] w-80 rounded-xl text-center flex items-center justify-center h-12 shadow-md">
+        <div className=" h-[50%] w-[30%] flex flex-col items-center justify-start p-8 rounded-xl bg-[#fefefe] shadow-xl">
+          <h1 className="text-3xl font-semibold text-[#363537] mb-10  w-80 rounded-xl text-center flex items-center justify-center">
             Tu perfil
           </h1>
 
+          <hr className="border-gray-600 rounded-lg mb-20 w-full"/>
+
           <div className=" w-full flex items-center justify-center mb-10">
-            <div className="h-8 border w-60 rounded-xl hover:bg-green-400 hover: transition duration-500 ease-in-out flex items-center justify-center p-1 shadow-lg text-[#363537] bg-green-100 hover:scale-[1.05]">
-              <Link href="/dashboard/purchases">Ir a tus compras</Link>
+            <div className="h-10 border w-64 rounded-xl hover:bg-yellow-100 hover: transition duration-500 ease-in-out flex items-center justify-center p-1 shadow-lg text-[#363537] hover:scale-[1.05]">
+              <Link href="/dashboard/purchases">Historial de compras</Link>
             </div>
           </div>
 
           <div className=" w-full flex items-center justify-center ">
             <button
-              className="h-8 border w-60 rounded-xl hover:bg-red-200 hover: transition duration-500 ease-in-out shadow-lg text-[#363537] bg-red-50 hover:text-red-500 hover:scale-[1.05]"
+              className="h-10 border w-60 rounded-xl hover:bg-red-200  shadow-lg text-[#363537] bg-red-50 hover:scale-[1.05] hover: transition duration-700 ease-in-out"
               onClick={handleOnClick}
             >
               Cerrar sesión
@@ -56,7 +58,7 @@ const ProfileView = () => {
         </div>
 
         {/* Contenedor Derecho */}
-        <div className=" h-[50%] w-[50%] flex flex-col justify-center items-center rounded-xl shadow-xl">
+        <div className=" h-[50%] w-[50%] flex flex-col justify-center items-center rounded-xl shadow-xl bg-[#fefefe]">
           <div className="font-bold">
             <h3>¡Qué gusto verte por aquí {name}!</h3>
           </div>

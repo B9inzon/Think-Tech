@@ -49,7 +49,7 @@ const RegisterForm: React.FC = () => {
   return (
     <form
       onSubmit={handleOnSubmit}
-      className="w-1/4 p-6 mx-auto space-y-6 rounded-lg shadow-lg bg-[#e1e0e3]"
+      className="w-1/4 p-6 mx-auto space-y-6 rounded-lg shadow-lg bg-[#fefefe] my-5"
     >
       {formInputs.map(({ label, name, type }) => (
         <div key={name} className="flex flex-col">

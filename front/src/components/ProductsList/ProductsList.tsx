@@ -31,7 +31,7 @@ const ProductsList = () => {
         {products &&
           products?.map((product) => {
             return( 
-              <Link className="hover:scale-[1.05] transition duration-500 ease-in-out" href={`/products/${product.id}`} key={product.id}>
+              <Link className="hover:scale-[1.05] transition duration-700 ease-in-out" href={`/products/${product.id}`} key={product.id}>
                   <ProductCard {...product} />
               </Link>
           )})}

@@ -60,8 +60,8 @@ const ProductDetail: React.FC<IProduct> = ({
       <h1 className="my-8 text-3xl font-bold text-[#363537]">
         Detalle del producto
       </h1>
-      <div className=" flex flex-row h-screen w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
-        <div className="flex flex-row h-[80%]  w-[80%] p-4 items-center justify-around rounded-xl border">
+      <div className=" flex flex-row h-screen w-[80%]  p-4 justify-center rounded-t-xl gap-8">
+        <div className="flex flex-row h-[80%]  w-[80%] p-4 items-center justify-around rounded-xl border shadow-xl">
           <div className="flex items-center justify-center w-[50%] h-full">
             <img className="w-full  h-[40% rounded-xl" src={image} alt={name} />
           </div>
