@@ -49,6 +49,7 @@ const PurchasesView = () => {
                   <h3 className="text-lg font-bold">
                     Estado: {purchases.status}
                   </h3>
+                  <p>Items:  {purchases.products.length}</p>
                 </div>
               </div>
             </div>
