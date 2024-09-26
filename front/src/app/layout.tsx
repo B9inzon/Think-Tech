@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.className} ${roboto.className} bg-[#fbfbfb] flex flex-col h-screen items-center justify-between`}
+        className={`${nunito.className} ${roboto.className} bg-[#e9e8ea] flex flex-col h-screen items-center justify-between
+        `}
       >
         <Navbar />
         {children}
