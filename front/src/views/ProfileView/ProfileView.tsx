@@ -3,6 +3,9 @@ import { IUserSession } from "@/Interfaces/IUserSession";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+
+
 
 const ProfileView = () => {
   const router = useRouter();
@@ -26,6 +29,8 @@ const ProfileView = () => {
   const handleOnClick = () => {
     if (window.confirm(`¿Desea cerrar sesión?`)) {
       localStorage.removeItem("userSession");
+      Cookies.remove('cookieAuth')
+
       router.push("/");
     }
   };
@@ -42,14 +47,14 @@ const ProfileView = () => {
           <hr className="border-gray-600 rounded-lg mb-20 w-full"/>
 
           <div className=" w-full flex items-center justify-center mb-10">
-            <div className="h-10 border w-64 rounded-xl hover:bg-yellow-100 hover: transition duration-500 ease-in-out flex items-center justify-center p-1 shadow-lg text-[#363537] hover:scale-[1.05]">
+            <div className="bg-[#e7e9e8] h-10 border w-64 rounded-xl hover:bg-[#d0d3d2] hover: transition duration-500 ease-in-out flex items-center justify-center p-1 shadow-lg text-[#363537]">
               <Link href="/dashboard/purchases">Historial de compras</Link>
             </div>
           </div>
 
           <div className=" w-full flex items-center justify-center ">
             <button
-              className="h-10 border w-60 rounded-xl hover:bg-red-200  shadow-lg text-[#363537] bg-red-50 hover:scale-[1.05] hover: transition duration-700 ease-in-out"
+              className="h-10 border w-64 rounded-xl shadow-lg text-[#363537] hover: transition duration-700 ease-in-out hover:bg-[#d0d3d2] bg-[#e7e9e8]"
               onClick={handleOnClick}
             >
               Cerrar sesión
