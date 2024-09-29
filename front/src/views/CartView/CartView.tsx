@@ -86,8 +86,8 @@ const CartView = () => {
       {/*//! div del titulo de la página*/}
       <h1 className="my-8 text-3xl font-bold text-[#363537]">Mi carrito</h1>
       {/*//!div que contiene los productos y el total*/}
-      <div className=" flex flex-row  h-full  w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
-        <div className=" w-[50%] items-center justify-center ">
+      <div className=" flex flex-row h-screen  w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
+        <div className=" w-[50%] max-h-[calc(70vh)] p-2 items-center justify-center overflow-y-auto ">
           {cart && cart.length > 0 ? (
             cart.map((cart: IProduct) => {
               return (
@@ -97,7 +97,7 @@ const CartView = () => {
                 >
                   <div className="flex items-start justify-center w-[20%] h-full ">
                     <img
-                      className="max-h-[220px] max-w-20"
+                      className="h-[70px] max-w-20"
                       src={cart.image}
                       alt={cart.name}
                     />
@@ -130,7 +130,7 @@ const CartView = () => {
 
         {/*//!div que contiene el total*/}
         <div className="border flex flex-col w-[30%] h-1/2 p-4 rounded-xl  justify-normal shadow-xl bg-[#fefefe]">
-          <div className="flex flex-row items-center justify-between font-semibold h-[10%]">
+          <div className="flex flex-row items-center justify-between font-semibold h-[10%] ">
             <h1 className="text-2xl text-[#363537]">Resumen</h1>
 
             {cart && cart.length > 0 ? (
