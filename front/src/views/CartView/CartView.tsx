@@ -82,11 +82,11 @@ const CartView = () => {
 
   return (
     //! div padre
-    <div className="flex flex-col items-center w-screen h-screen ">
+    <div className="flex flex-col items-center w-screen h-screen  ">
       {/*//! div del titulo de la página*/}
       <h1 className="my-8 text-3xl font-bold text-[#363537]">Mi carrito</h1>
       {/*//!div que contiene los productos y el total*/}
-      <div className=" flex flex-row h-screen w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
+      <div className=" flex flex-row  h-full  w-[80%]  p-4 justify-center rounded-t-xl gap-8 ">
         <div className=" w-[50%] items-center justify-center ">
           {cart && cart.length > 0 ? (
             cart.map((cart: IProduct) => {
