@@ -6,6 +6,7 @@ import { ILoginErrorState, ILoginFormState } from "@/Interfaces/ILogin";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/helpers/Register.helper";
 import Cookies from "js-cookie";
+import Swal from "sweetalert2";
 
 
 const LoginForm: React.FC = () => {
@@ -34,7 +35,14 @@ const LoginForm: React.FC = () => {
     localStorage.setItem("userSession", JSON.stringify({ token, user }));
     Cookies.set('cookieAuth', JSON.stringify({token, user}))
 
-    alert("¡Ha ingresado correctamente!");
+    // alert("¡Ha ingresado correctamente!");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "¡Has ingresado correctamente",
+      showConfirmButton: false,
+      timer: 1500
+    });
     router.push("/");
 
     console.log(response);

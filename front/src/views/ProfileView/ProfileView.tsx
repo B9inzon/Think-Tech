@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-
-
+import Swal from "sweetalert2";
 
 const ProfileView = () => {
   const router = useRouter();
@@ -26,11 +25,19 @@ const ProfileView = () => {
 
   console.log(userData);
 
-  const handleOnClick = () => {
-    if (window.confirm(`¿Desea cerrar sesión?`)) {
-      localStorage.removeItem("userSession");
-      Cookies.remove('cookieAuth')
+  const handleOnClick = async () => {
+    const result = await Swal.fire({
+      text: "¿Deseas cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#10b981",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, cerrar sesión.",
+    });
 
+    if (result.isConfirmed) {
+      localStorage.removeItem("userSession");
+      Cookies.remove("cookieAuth");
       router.push("/");
     }
   };
@@ -44,7 +51,7 @@ const ProfileView = () => {
             Tu perfil
           </h1>
 
-          <hr className="border-gray-600 rounded-lg mb-20 w-full"/>
+          <hr className="border-gray-600 rounded-lg mb-20 w-full" />
 
           <div className=" w-full flex items-center justify-center mb-10">
             <div className="bg-[#e7e9e8] h-10 border w-64 rounded-xl hover:bg-[#d0d3d2] hover: transition duration-500 ease-in-out flex items-center justify-center p-1 shadow-lg text-[#363537]">
@@ -70,13 +77,13 @@ const ProfileView = () => {
           <div className="items-start m-8">
             <div>
               <p>
-                La dirección de envio registrada es:
+                La dirección de envío registrada es:
                 <span className="font-semibold"> {address}</span>
               </p>
             </div>
             <div>
               <p>
-                El número de telefono registrado es:
+                El número de teléfono registrado es:
                 <span className="font-semibold"> {phone}</span>
               </p>
             </div>

@@ -5,6 +5,7 @@ import { IProduct } from "@/Interfaces/IProduct";
 import { IUserSession } from "@/Interfaces/IUserSession";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 
 const CartView = () => {
   const [cart, setCart] = useState<IProduct[]>([]);
@@ -51,7 +52,15 @@ const CartView = () => {
     const idProduct = cart?.map((product) => product.id);
     // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     await createPurchase(idProduct, userData?.token!);
-    alert("Compra realizada con éxito");
+    // alert("Compra realizada con éxito");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Compra realizada con éxito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
     setCart([]);
     setTotalCart(0);
     setTotalItems(0);
@@ -59,11 +68,24 @@ const CartView = () => {
   };
 
   const handleOnClearCart = async () => {
-    window.confirm("¿Desea eliminar los productos del carrito?");
-    setCart([]);
-    setTotalCart(0);
-    setTotalItems(0);
-    localStorage.setItem("cart", "[]");
+    const result = await Swal.fire({
+      text: "¿Deseas vaciar el carrito?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#10b981",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, vaciar carrito."
+    });
+    if (result.isConfirmed) {
+      Swal.fire({
+        text: "Tu carrito se vació.",
+        icon: "success"
+      });
+      setCart([]);
+      setTotalCart(0);
+      setTotalItems(0);
+      localStorage.setItem("cart", "[]");
+    }
   };
 
   const handleDeleteOne = async (id: number) => {
