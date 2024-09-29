@@ -72,6 +72,16 @@ const productsToPreLoad: IProduct[] = [
     categoryId: 6,
     stock: 10,
   },
+  {
+    name: "IMac",
+    price: 2214,
+    description:
+      "El mejor computador todo-en-uno del mundo, ahora con los superpoderes del chip M3. Su gran pantalla de 24 pulgadas1 te da todo el espacio que necesitas, y su irresistible diseño llena de vida cualquier lugar. Míralo bien: el iMac es perfecto para trabajar y jugar.",
+    image:
+      "https://www.apple.com/v/imac/p/images/overview/color_front_green__eb8qbnemmre6_large.jpg",
+    categoryId: 7,
+    stock: 10,
+  },
 ];
 
 export const preLoadProducts = async () => {
