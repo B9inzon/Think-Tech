@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white shadow sm:flex sm:items-center sm:justify-center sm:p-6 xl:p-8 dark:bg-[#b6b3b9] antialiased gap-8">
+    <footer className="w-full sm:flex sm:items-center sm:justify-center h-10 sm:p-6 xl:p-8 bg-emerald-500 antialiased gap-8">
       <p className="mb-4 text-lg text-center text-[#363537]  sm:mb-0">
         &copy; 2024{" "}
         <a
