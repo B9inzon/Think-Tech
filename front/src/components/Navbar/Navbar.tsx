@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="w-screen text-lg flex items-center justify-center bg-emerald-500">
-      <nav className="flex flex-col sm:flex-row items-center justify-between w-11/12 h-auto sm:h-24 py-4">
+      <nav className="flex flex-col sm:flex-row items-center justify-between w-[90%] h-full sm:h-20 sm:w-[90%] py-2 ">
         <div className="mb-4 sm:mb-0">
           <Link
             className="flex flex-row gap-3 items-center justify-center"
@@ -39,7 +39,7 @@ const Navbar = () => {
             className="hover:scale-[1.2] transition duration-500 ease-in-out"
             href="/"
           >
-            Home
+            Productos
           </Link>
 
           <Link
