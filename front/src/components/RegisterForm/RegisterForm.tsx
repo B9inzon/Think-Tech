@@ -5,6 +5,7 @@ import { IRegisterErrorState, IRegisterFormState } from "@/Interfaces/IRegister"
 import validateRegister from "@/helpers/validateRegister";
 import { useRouter } from "next/navigation";
 import { registerUser } from "@/helpers/Register.helper";
+import Swal from "sweetalert2";
 
 const RegisterForm: React.FC = () => {
   const router = useRouter();
@@ -29,7 +30,14 @@ const RegisterForm: React.FC = () => {
     event.preventDefault();
     await registerUser(form)
     
-    alert("¡Se ha registrado con éxito!")
+    // alert("¡Se ha registrado con éxito!")
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "¡Usuario registrado correctamente!",
+      showConfirmButton: false,
+      timer: 1500
+    });
     router.push("/login");
   };
 
