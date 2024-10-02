@@ -11,6 +11,8 @@ const PurchasesView = () => {
   const [purchases, setPurchases] = useState<IPurchase[]>([]);
   const [userData, setUserData] = useState<IUserSession>();
 
+
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
       const userData = JSON.parse(localStorage.getItem("userSession")!);
@@ -44,7 +46,7 @@ const PurchasesView = () => {
           return (
             <div
               key={purchases.id}
-              className="flex flex-row h-20 bg-[#f7f7f8] w-[50%] p-2 mb-5 items-center justify-around rounded-xl shadow-lg"
+              className="flex flex-row h-20 bg-[#f7f7f8] w-[70%] p-2 mb-5 items-center justify-around rounded-xl shadow-lg"
             >
               <div className="flex flex-row h-full w-full items-center justify-evenly ">
                 <h3 className="text-lg font-medium">
@@ -62,6 +64,12 @@ const PurchasesView = () => {
                     {purchases.status}
                   </span>
                 </h3>
+                {/* <h3 className="text-lg font-medium">
+                  Total:{" "}
+                  <span className="text-lg font-semibold">
+                    {totalCart.}
+                  </span>
+                </h3> */}
               </div>
             </div>
           );

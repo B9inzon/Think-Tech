@@ -52,7 +52,6 @@ const CartView = () => {
     const idProduct = cart?.map((product) => product.id);
     // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     await createPurchase(idProduct, userData?.token!);
-    // alert("Compra realizada con éxito");
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -60,7 +59,6 @@ const CartView = () => {
       showConfirmButton: false,
       timer: 1500
     });
-
     setCart([]);
     setTotalCart(0);
     setTotalItems(0);

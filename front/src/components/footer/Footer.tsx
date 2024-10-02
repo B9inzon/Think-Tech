@@ -74,6 +74,7 @@ const Footer = () => {
           href="https://github.com/B9inzon"
           data-tooltip-target="tooltip-github"
           className="inline-flex justify-center p-2 text-[#363537] rounded-lg cursor-pointer hover:text-gray-100  dark:hover:bg-gray-600"
+          target="_blank"
         >
           <svg
             className="w-6 h-6"
