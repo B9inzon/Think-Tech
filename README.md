@@ -19,7 +19,7 @@
 
 <div align= "center">
 
-![login](images\Think-Tech-login.jpg)
+![login](images/Think-Tech-login.jpg)
 </div>
 
 
