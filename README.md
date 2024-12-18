@@ -12,16 +12,20 @@
   Este proyecto fue uno de los desafios que enfrenté durante el bootcamp de SoyHenry, donde tuve que desarrollar el front end de un e-commerce utilizando Next.js. El proyecto consiste en una tienda en línea de dispositivos tecnológicos como celulares, portátiles, audifonos, entre otros, donde los usuarios pueden registrarse, iniciar sesión y luego de iniciar sesión, pueden agregar los productos a un carrito. El carrito muestra los productos, el precio total, la cantidad de items agregados y tambien se puede eliminar los items del carrito.
   </p>
   <p>El carrito mantiene los productos incluso después de cerrar sesión para visualizarlos al voler a ingresar.</p>
-  <h3>
-    Conectemos 🤝
-  </h3>
+
+<div align="center">
+  <img src="images/Think-Tech-login.jpg" width="400" alt="login">
+  <img src="images/Think-Tech-register.jpg" width="400" alt="register">
+</div>
+<div align="center">
+  <img src="images/Think-Tech-landing.jpg" width="400" alt="landing">
+  <img src="images/Think-Tech-shoppingcart.jpg" width="400" alt="shopping cart">
 </div>
 
-<div align= "center">
 
-![login](images/Think-Tech-login.jpg)
-</div>
-
+<h2 align="center">
+  Tecnologías que usé
+  </h2>
 
 
 <div align="center">
@@ -46,12 +50,14 @@
 <a href="https://tailwindcss.com/" target="_blank">
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
 </a>
-<a href="https://getbootstrap.com/" target="_blank">
-  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-</a>
+
 </div>
 <br>
 <br>
+  <h3>
+    Conectemos 🤝
+  </h3>
+</div>
 <div id="badges" align="center" >
   <a href="www.linkedin.com/in/brandon-pinzon-7b6262287" target="_blank" >
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
