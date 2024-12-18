@@ -59,7 +59,7 @@
   </h3>
 </div>
 <div id="badges" align="center" >
-  <a href="www.linkedin.com/in/brandon-pinzon-7b6262287" target="_blank" >
+  <a href="https://www.linkedin.com/in/brandon-smith-pinz%C3%B3n-tovar-frontend-developer/" target="_blank" >
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
   <a href="https://wa.link/ipmfk4" target="_blank" >
